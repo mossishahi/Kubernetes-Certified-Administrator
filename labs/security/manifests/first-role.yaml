@@ -5,5 +5,8 @@ metadata:
   name: service-reader
 rules:
 - apiGroups: [""]
-  verbs: ["get", "list"]
-  resources: ["services"]
+  verbs: 
+  - "get" 
+  - "list"
+  resources: 
+  - "services"

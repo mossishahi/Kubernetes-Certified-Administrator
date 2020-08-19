@@ -1,0 +1,43 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+BOX_IMAGE = "ubuntu-18.04-k8s-ceph-15.2.4"
+MON_IP = "192.168.13.210"
+SCRIPT_PATH = "./init-ceph.sh"
+OSD1 = './disk/osd1.vdi'
+OSD2 = './disk/osd2.vdi'
+OSD3 = './disk/osd3.vdi'
+
+Vagrant.configure("2") do |config|
+
+    config.ssh.username = "cka"
+    config.ssh.password = "cka"
+    config.vm.provision "shell", path: SCRIPT_PATH, args: MON_IP
+
+    config.vm.define "ceph-mon-01" do |subconfig|
+      subconfig.vm.box = BOX_IMAGE
+      subconfig.vm.hostname = "ceph-mon-01"
+      subconfig.vm.network "public_network",ip: MON_IP , bridge: [  "wlp4s0", ]
+    end
+
+    config.vm.provider "virtualbox" do |v|
+      v.memory = 2048
+      v.cpus = 2
+      v.name = "home-ceph-mon-01"
+      unless File.exist?(OSD1)
+        v.customize ['createhd', '--filename', OSD1, '--size', 12 * 1024]
+      end
+      v.customize ['storageattach', :id, '--storagectl', 'IDE Controller', '--port', 0, '--device', 1, '--type', 'hdd', '--medium', OSD1]
+      unless File.exist?(OSD2)
+        v.customize ['createhd', '--filename', OSD2, '--size', 12 * 1024]
+      end
+      v.customize ['storageattach', :id, '--storagectl', 'IDE Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', OSD2]
+      unless File.exist?(OSD3)
+        v.customize ['createhd', '--filename', OSD3, '--size', 12 * 1024]
+      end
+      v.customize ['storageattach', :id, '--storagectl', 'IDE Controller', '--port', 1, '--device', 1, '--type', 'hdd', '--medium', OSD3]
+    end
+
+end
+
+
