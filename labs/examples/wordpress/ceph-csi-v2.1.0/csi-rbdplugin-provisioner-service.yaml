@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: csi-rbdplugin-provisioner
+  labels:
+    app: csi-metrics
+  namespace: ceph-csi
+spec:
+  selector:
+    app: csi-rbdplugin-provisioner
+  ports:
+  - name: http-metrics
+    port: 8080
+    protocol: TCP
+    targetPort: 8680
