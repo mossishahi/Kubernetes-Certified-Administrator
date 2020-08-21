@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-KUBE_VERSION=1.18.6-00
+KUBE_VERSION=1.18.8-00
 DOCKER_VERSION=5:19.03.11~3-0~ubuntu-bionic
 
 # disable translate download and add proxy
@@ -9,13 +9,12 @@ Acquire::Languages "none";
 EOF
 
 cat <<EOF | sudo tee /etc/apt/apt.conf.d/21proxy
-Acquire::http::proxy::download.docker.com "http://username:password@proxy.example.com:port/";
-Acquire::http::proxy::apt.kubernetes.io "http://username:password@proxy.example.com:port/";
-Acquire::http::proxy::packages.cloud.google.com "http://username:password@proxy.example.com:port/";
+Acquire::http::proxy::download.docker.com "http://behrad:Rahiman@arvan.linuxmotto.ir:3333/";
+Acquire::http::proxy::apt.kubernetes.io "http://behrad:Rahiman@arvan.linuxmotto.ir:3333/";
+Acquire::http::proxy::packages.cloud.google.com "http://behrad:Rahiman@arvan.linuxmotto.ir:3333/";
 EOF
 
 # Install Kuberntes components
-sudo apt-get update && sudo apt-get install -y apt-transport-https curl ca-certificates software-properties-common gnupg2
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 6A030B21BA07F4FB
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
@@ -48,7 +47,7 @@ EOF
 sudo mkdir -p /etc/systemd/system/docker.service.d
 cat <<EOF | sudo tee /etc/systemd/system/docker.service.d/override.conf
 [Service]
-Environment="HTTP_PROXY=http://username:password@proxy.example.com:port/" "HTTPS_PROXY=http://username:password@proxy.example.com:port/" "NO_PROXY=localhost,127.0.0.0/8,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12"
+Environment="HTTP_PROXY=http://behrad:Rahiman@arvan.linuxmotto.ir:3333/" "HTTPS_PROXY=http://behrad:Rahiman@arvan.linuxmotto.ir:3333/" "NO_PROXY=registry.cafebazaar.ir:5000,localhost,127.0.0.0/8,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12"
 EOF
 
 # Restart Docker

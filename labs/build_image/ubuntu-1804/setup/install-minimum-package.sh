@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+sudo apt-get update 
+sudo apt-get install -y apt-transport-https curl ca-certificates software-properties-common gnupg2 vim traceroute bash-completion
+sudo apt-get upgrade -y
+sudo apt-get clean
