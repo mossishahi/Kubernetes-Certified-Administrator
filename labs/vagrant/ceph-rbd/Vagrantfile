@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-BOX_IMAGE = "ubuntu-18.04-k8s-ceph-15.2.4"
+BOX_IMAGE = "ubuntu-18.04-k8s-ceph-15"
 MON_IP = "192.168.13.210"
 SCRIPT_PATH = "./init-ceph.sh"
 OSD1 = './disk/osd1.vdi'
@@ -10,8 +10,8 @@ OSD3 = './disk/osd3.vdi'
 
 Vagrant.configure("2") do |config|
 
-    config.ssh.username = "cka"
-    config.ssh.password = "cka"
+    config.ssh.username = "user"
+    config.ssh.password = "user"
     config.vm.provision "shell", path: SCRIPT_PATH, args: MON_IP
 
     config.vm.define "ceph-mon-01" do |subconfig|
@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.provider "virtualbox" do |v|
-      v.memory = 2048
+      v.memory = 4048
       v.cpus = 2
       v.name = "home-ceph-mon-01"
       unless File.exist?(OSD1)
