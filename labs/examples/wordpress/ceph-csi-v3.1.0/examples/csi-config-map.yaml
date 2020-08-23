@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ceph-csi-config
+  namespace: ceph-csi
+data:
+  config.json: |-
+    [
+      {
+        "clusterID": "61a2c034-e51c-11ea-ad47-080027a43098",
+        "radosNamespace": "cafebazaar",
+        "monitors": [
+          "192.168.13.210"
+        ]
+      }
+    ]
+

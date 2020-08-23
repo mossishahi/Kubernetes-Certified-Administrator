@@ -1,0 +1,20 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: test
+provisioner: rbd.csi.ceph.com
+parameters:
+  clusterID: 61a2c034-e51c-11ea-ad47-080027a43098
+  pool: cka
+  imageFeatures: "layering"
+  csi.storage.k8s.io/provisioner-secret-name: csi-rbd-secret-test
+  csi.storage.k8s.io/provisioner-secret-namespace: ceph-csi
+  csi.storage.k8s.io/node-stage-secret-name: csi-rbd-secret-test
+  csi.storage.k8s.io/node-stage-secret-namespace: ceph-csi
+  csi.storage.k8s.io/controller-expand-secret-name: csi-rbd-secret-test
+  csi.storage.k8s.io/controller-expand-secret-namespace: ceph-csi
+  fsType: ext4
+reclaimPolicy: Delete
+allowVolumeExpansion: true
+mountOptions:
+- discard
