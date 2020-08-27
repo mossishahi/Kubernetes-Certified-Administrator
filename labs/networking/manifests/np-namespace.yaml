@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: access-to-payment
+spec:
+  podSelector:
+    matchLabels:
+      app: payment
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          organization: anisa
+    ports:
+    - port: 80

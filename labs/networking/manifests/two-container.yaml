@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: test-box
+  name: test-box
+spec:
+  restartPolicy: Never
+  containers:
+  - name: test-box
+    args:
+    - sleep
+    - "99999"
+    image: busybox
+ - name: test-nginx
+   image: nginx
+   imagePullPolicy: Always
+   

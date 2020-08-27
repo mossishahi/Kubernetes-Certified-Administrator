@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: nginx
+  name: test-nginx
+  namespace: default
+spec:
+  containers:
+  - image: nginx
+    name: test-nginx
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html/test
+      name: test-volume
+  initContainers:
+  - image: alpine
+    name: initcontainer
+    command: ["/bin/sh", "-c", "--"]
+    args: ["echo This is test page! > /usr/share/nginx/html/test/index.html"]
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html/test
+      name: test-volume
+  volumes:
+  - name: test-volume
+    emptyDir: {}
