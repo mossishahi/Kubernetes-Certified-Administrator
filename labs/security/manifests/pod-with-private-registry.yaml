@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-private-registry
+spec:
+  containers:
+  - name: test-box
+    image: registry.example.com:5000/busybox:local
+    command: ["/bin/sleep", "999999"]
+  imagePullSecrets:
+  - name: registry
