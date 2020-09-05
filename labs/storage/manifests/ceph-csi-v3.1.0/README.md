@@ -21,12 +21,12 @@ kubectl create ns ceph-csi
 
 ## Deploy ceph-csi provisioner
 ```
-kubectl apply -f csi-config-map.yaml                  
-kubectl apply -f ceph-csi-encryption-kms-config.yaml   
-kubectl apply -f csi-provisioner-rbac.yaml
-kubectl apply -f csi-nodeplugin-rbac.yaml             
-kubectl apply -f csi-rbdplugin-provisioner.yaml   
-kubectl apply -f csi-rbdplugin.yaml
+kubectl -n ceph-csi apply -f csi-config-map.yaml                  
+kubectl -n ceph-csi apply -f ceph-csi-encryption-kms-config.yaml   
+kubectl -n ceph-csi apply -f csi-provisioner-rbac.yaml
+kubectl -n ceph-csi apply -f csi-nodeplugin-rbac.yaml             
+kubectl -n ceph-csi apply -f csi-rbdplugin-provisioner.yaml   
+kubectl -n ceph-csi apply -f csi-rbdplugin.yaml
 ```
 
 ## Create secret for provisioning
