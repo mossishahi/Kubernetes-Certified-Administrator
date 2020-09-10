@@ -51,7 +51,7 @@ $ kubectl -n kube-system get configmap coredns -o yaml
            fallthrough in-addr.arpa ip6.arpa
            ttl 30
         }
-        `prometheus :9153`
+        prometheus :9153
 ...
 ```
 

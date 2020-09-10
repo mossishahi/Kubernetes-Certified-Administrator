@@ -1,0 +1,2 @@
+# Kubernetes Loggging Architecture
+
