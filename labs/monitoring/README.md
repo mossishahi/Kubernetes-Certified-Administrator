@@ -23,3 +23,47 @@ spec:
           - '--metric-blacklist=kube_configmap_.*'
 ```
 
+# node-exporter
+Install node-exporter as a systemd service  
+```
+apt-get install prometheus-node-exporter
+```
+
+Install node-exporter as a daemonsets
+```
+kubectl -n monitoring apply -f  manifests/node-exporter-daemonset.yaml
+```
+
+# Enable prometheus metrics for coredns
+Configmap  
+```
+$ kubectl -n kube-system get configmap coredns -o yaml
+...
+  Corefile: |
+    .:53 {
+        errors
+        health {
+           lameduck 5s
+        }
+        ready
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+           pods insecure
+           fallthrough in-addr.arpa ip6.arpa
+           ttl 30
+        }
+        `prometheus :9153`
+...
+```
+
+Service
+```
+$ kubectl -n kube-system get service kube-dns -o yaml
+...
+  - name: metrics
+    port: 9153
+    protocol: TCP
+    targetPort: 9153
+...
+```
+
+
