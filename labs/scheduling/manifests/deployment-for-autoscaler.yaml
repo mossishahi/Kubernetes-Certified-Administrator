@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+  labels:
+    app: test-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test-deployment
+  template:
+    metadata:
+      labels:
+        app: test-deployment
+    spec:
+      containers:
+      - image: busybox
+        command: ["/bin/sleep", "999999"]
+        name: test-deployment
+        resources:
+          requests:
+            cpu: 100m
