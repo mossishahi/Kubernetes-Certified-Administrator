@@ -1,12 +1,8 @@
 # Build Image with Packer
 
-## Install packer
-Download packer file and copy to bin folder  
-```
-wget https://releases.hashicorp.com/packer/1.6.0/packer_1.6.0_linux_amd64.zip
-unzip packer_1.6.0_linux_amd64.zip
-mv packer /usr/local/bin/
-```
+## Preparation
+Before build this image, you must build ubuntu-1804 image as a base image.  
+Follow [Ubuntu-1804 README](../ubuntu-1804/README.md)
 
 ## Build ova image for virtulabox
 Just run  
@@ -14,36 +10,23 @@ Just run
 packer build template.json
 ```
 
-## Build multi stage
-Build ova file with kubernetes packages. Remove pull-image.sh provisioner stage from template.json.  
-```
-    {
-       "type":"shell",
-       "script":"setup/pull-images.sh"
-    }
-```
-
-Run build  
-```
-packer build template.json
-```
-
-build ultimate packet from first ova  
-```
-packer build template-ova.json
-```
-
-# Initial Single Node Cluster
-Use kubeadm for initialize cluster.  
-```
-kubeadm init --kubernetes-version 1.18.6
-```
-
-Deploy Calico network plugin
-```
-$ wget https://docs.projectcalico.org/v3.14/manifests/calico.yaml
-$ sed -i 's/3.14.[0-9]\+/3.14.1/g' calico.yaml
-$ sudo kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f calico.yaml
-```
+## Build Steps
+This build include two main steps. 
+1. Install required packages
+2. Pull docker images.
 
 
+### Install Required Packeges
+The `install-docker-k8s.sh` script include a few part.  
+a. Disable transalte  
+b. Add proxy for apt (If you not in Iran, dont need proxy)  
+c. Add Kubernetes and Docker repositories  
+d. Install docker-ce and Kubernets components (kubelet, kubeadm, kubectl) and hold these packages to prevent upgrade.  
+e. Change Docker configuation based on [Kubernetes document](https://kubernetes.io/docs/setup/production-environment/container-runtimes/).  
+f. Add proxy for docker service and restart servcie (If you not in Iran, comment this part  
+g. Disable swap  
+h. Remove docker proxy and install `shecan` (This if for Iranina users too, comment `# Add shecan` part if youre not from Iran.
+
+
+### Pulling Images
+The `pull-images.sh` script pull required docker images, need for deploy kubernetes control-plane.
