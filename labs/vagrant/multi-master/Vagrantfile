@@ -1,21 +1,21 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-BOX_IMAGE = "ubuntu-18.04-k8s-1.18.6-img3"
+BOX_IMAGE = "ubuntu-18.04-k8s-1.18.8"
 NODE_COUNT = 3
 SCRIPT_PATH = "./init-k8s.sh"
 
 Vagrant.configure("2") do |config|
 
   (1..NODE_COUNT).each do |i|
-    config.ssh.username = "cka"
-    config.ssh.password = "cka"
-#    config.vm.provision "shell", path: SCRIPT_PATH, args: [ "192.168.13.20#{i + 1}", "#{i}" ]
+    config.ssh.username = "user"
+    config.ssh.password = "user"
+    config.vm.provision "shell", path: SCRIPT_PATH, args: [ "192.168.13.20#{i + 1}", "#{i}" ]
     config.vm.define "master-#{i}" do |subconfig|
       subconfig.vm.provider "virtualbox" do |v|
         v.memory = 2048
         v.cpus = 2
-        v.name = "home-master-#{i}"
+        v.name = "master-#{i}"
       end
       subconfig.vm.box = BOX_IMAGE
       subconfig.vm.hostname = "master-#{i}"
