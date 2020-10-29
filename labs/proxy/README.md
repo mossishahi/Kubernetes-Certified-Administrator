@@ -18,7 +18,7 @@
 
 Install squid version 4.x
 ```
-echo "deb http://squid46.diladele.com/ubuntu/ <code_name> main" > /etc/apt/sources.list.d/squid4.list
+echo "deb http://squid413.diladele.com/ubuntu/ <code_name> main" > /etc/apt/sources.list.d/squid4.list
 apt-get update
 apt-get install -y squid apache2-utils
 ```
@@ -85,7 +85,7 @@ htpasswd -c /etc/squid/htpasswd <username>
 ## Install External Squid
 Install squid version 4.x
 ```
-echo "deb http://squid46.diladele.com/ubuntu/ <code_name> main" > /etc/apt/sources.list.d/squid4.list
+echo "deb http://squid413.diladele.com/ubuntu/ <code_name> main" > /etc/apt/sources.list.d/squid4.list
 apt-get update
 apt-get install -y squid
 ```
