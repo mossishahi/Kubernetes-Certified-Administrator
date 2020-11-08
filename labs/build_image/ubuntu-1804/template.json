@@ -34,7 +34,7 @@
       "iso_url": "{{user `iso_path`}}",
       "shutdown_command": "echo 'packer' | sudo -S shutdown -P now",
       "guest_additions_url": "/usr/share/virtualbox/VBoxGuestAdditions.iso",
-      "guest_additions_sha256": "e51e33500a265b5c2d7bb2d03d32208df880523dfcb1e2dde2c78a0e0daa0603",
+      "guest_additions_sha256": "78fa2ba78e91c7d6f16f8c7fa88676cc9772c7689ba47e2b19913670fad2d441",
       "guest_additions_mode": "attach",
       "ssh_password": "{{user `ssh_password`}}",
       "ssh_username": "{{user `ssh_user`}}",

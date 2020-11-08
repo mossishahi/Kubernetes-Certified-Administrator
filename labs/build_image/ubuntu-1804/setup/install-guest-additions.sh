@@ -8,4 +8,3 @@ sudo mount -o ro /dev/sr1 /media/VBoxGuestAdditions
 sudo sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run
 sudo umount /media/VBoxGuestAdditions
 sudo rmdir /media/VBoxGuestAdditions
-sudo rm /home/user/VBoxGuestAdditions.iso
