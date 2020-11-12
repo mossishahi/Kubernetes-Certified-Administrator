@@ -2,6 +2,10 @@
 
 IP=$1
 
+echo 'export PS1="\e[0;31m[\u@\h: \w\a\]\u@\h:\w$ \e[m"' | sudo tee -a /root/.bashrc
+sudo sed -i '/ceph-mon-01/ d' /etc/hosts
+echo "$IP    ceph-mon-01" | sudo tee -a /etc/hosts
+
 cat <<EOF >ceph.conf
 [global]
 osd crush chooseleaf type = 0
