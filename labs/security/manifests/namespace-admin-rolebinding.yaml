@@ -1,0 +1,12 @@
+kind: RoleBinding
+metadata:
+  name: namespace-admin-behrad
+  namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: namespace-admin
+subjects:
+- kind: ServiceAccount
+  name: behrad
+  namespace: default
