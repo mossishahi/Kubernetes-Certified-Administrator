@@ -1,0 +1,23 @@
+apiVersion: kubeadm.k8s.io/v1beta2
+caCertPath: /etc/kubernetes/pki/ca.crt
+kind: JoinConfiguration
+discovery:
+  bootstrapToken:
+    apiServerEndpoint: 92.114.19.72:8443
+    caCertHashes:
+    - sha256:7495830a745a99661f3a1e05d852bcd652a9fb9034f3554b575d612fa1644d3f
+    token: u47rrg.fwe4whsdlqdfvhdh
+  timeout: 5m0s
+  tlsBootstrapToken: u47rrg.fwe4whsdlqdfvhdh
+nodeRegistration:
+  name: master-2
+  taints:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+  kubeletExtraArgs:
+    node-ip: 92.114.19.74
+controlPlane:
+  localAPIEndpoint:
+    advertiseAddress: 92.114.19.74
+    bindPort: 6443
+  certificateKey: 7de3237a00154c55080e1275540f57af44918794155f30907e54bcfa2e5193f3

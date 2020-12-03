@@ -1,4 +1,4 @@
-apiVersion: kubeadm.k8s.io/v1beta1
+apiVersion: kubeadm.k8s.io/v1beta2
 kind: ClusterConfiguration
 kubernetesVersion: 1.18.8
 dns:
@@ -6,45 +6,50 @@ dns:
 etcd:
   local:
     serverCertSANs:
-    - 192.168.13.202
+    - 92.114.19.73
     - master-1
-    - 192.168.13.203
+    - 92.114.19.74
     - master-2
-    - 192.168.13.204
+    - 92.114.19.75
     - master-3
     peerCertSANs:
-    - 192.168.13.202
+    - 92.114.19.73
     - master-1
-    - 192.168.13.203
+    - 92.114.19.74
     - master-2
-    - 192.168.13.204
+    - 92.114.19.75
     - master-3
 
 networking:
   # This CIDR is a Calico default. Substitute or remove for your CNI provider.
   # serviceSubnet: "10.96.0.0/12"
-  podSubnet: "192.168.0.0/16"
+  # podSubnet: "192.168.0.0/16"
   dnsDomain: "cluster.local"
 apiServer:
   certSANs:
-  - 192.168.13.202
+  - 92.114.19.72
+  - 92.114.19.73
+  - 92.114.19.74
+  - 92.114.19.75
   - cluster.local
-controlPlaneEndpoint: "192.168.13.202:6413"
+controlPlaneEndpoint: "92.114.19.72:8443"
 certificatesDir: "/etc/kubernetes/pki"
 imageRepository: "k8s.gcr.io"
 useHyperKubeImage: false
 clusterName: "cluster.local"
 ---
-apiVersion: kubeadm.k8s.io/v1beta1
+apiVersion: kubeadm.k8s.io/v1beta2
 kind: InitConfiguration
 localAPIEndpoint:
-  advertiseAddress: 192.168.13.202
+  advertiseAddress: 92.114.19.73
+  bindPort: 6443
 nodeRegistration:
   kubeletExtraArgs:
-    node-ip: "$INTERNALIP"
+    node-ip: 92.114.19.73
 ---
 apiVersion: kubeproxy.config.k8s.io/v1alpha1
 kind: KubeProxyConfiguration
 # This CIDR is a Calico default. Substitute or remove for your CNI provider.
-clusterCIDR: "192.168.0.0/16"
+# clusterCIDR: "192.168.0.0/16"
 mode: "ipvs"
+
