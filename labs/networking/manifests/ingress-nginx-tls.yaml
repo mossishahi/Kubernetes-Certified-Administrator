@@ -1,0 +1,30 @@
+apiVersion: v1
+data:
+  ca.crt: "<can be empty>"
+  tls.crt: "<base64 certification>"
+  tls.key: "<base64 key>"
+kind: Secret
+metadata:
+  name: example-com-tls-secret
+  namespace: default
+type: kubernetes.io/tls
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx
+  namespace: default
+spec:
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - backend:
+          serviceName: nginx
+          servicePort: 80
+        path: /test
+  tls:
+  - hosts:
+    - example.com
+    secretName: example-com-tls-secret
