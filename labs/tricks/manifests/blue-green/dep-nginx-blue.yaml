@@ -1,0 +1,105 @@
+apiVersion: v1
+data:
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURvVENDQW9tZ0F3SUJBZ0lVRVhqNlNzbENHQ0FwVWhrZkF4c1ZVMlBFUkFZd0RRWUpLb1pJaHZjTkFRRUwKQlFBd1lERUxNQWtHQTFVRUJoTUNTVkl4RHpBTkJnTlZCQWdNQmxSbGFISmhiakVPTUF3R0ExVUVDZ3dGUVc1cApjMkV4RkRBU0JnTlZCQU1NQzJWNFlXMXdiR1V1WTI5dE1Sb3dHQVlKS29aSWh2Y05BUWtCRmd0aVFHZHRZV2xzCkxtTnZiVEFlRncweU1ERXlNVGN3TXpJM01qTmFGdzB5TVRFeU1UY3dNekkzTWpOYU1HQXhDekFKQmdOVkJBWVQKQWtsU01ROHdEUVlEVlFRSURBWlVaV2h5WVc0eERqQU1CZ05WQkFvTUJVRnVhWE5oTVJRd0VnWURWUVFEREF0bAplR0Z0Y0d4bExtTnZiVEVhTUJnR0NTcUdTSWIzRFFFSkFSWUxZa0JuYldGcGJDNWpiMjB3Z2dFaU1BMEdDU3FHClNJYjNEUUVCQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUUMxcitTV2crRTVjUGVkUld6L0JFQ2Z3U3NYZCtiM0pwMVAKN1RwYUplVXZGMmNOOWxTRm8xZ1pINFFVYlFSQWR3TGJVbmFDcFpZTmI0S0ZjeXNRa1M4aE02MHo4YTVqY05uTgphd1pERmg4NFYvbU1hdFhucXlRS3NTdkFWbDIzais1Slo2enhTbWxBUy82dUhhNzF0cTh1WThvSHorOTRPaEd6CmFPcmpPTmR2dkxFaDhaVVpjMndNK1RLZ0htWnRhR2FFZDljemlIaGpZTEtiSFlxMitxUGRrVndCYllJUGlJTzIKYXFtZnoyQ0RFcnJkcU5lbXFCNFZ2UFhQM3M5ckhEbkNUMUh5SnBKK3FDdXJ3NjNhTGZWZEdVa0xSSWNzNC9tVQpucGtUS2pCWlNCTjdRSWJ4RUVSWDlyeDlUYkhNWEpGNi9MUVN0TzlVSVU5MWxrRVJiUHMxQWdNQkFBR2pVekJSCk1CMEdBMVVkRGdRV0JCUlNHdEFqcnd4Ync0Wm1WRGI2Ulk4T0FEaFBDekFmQmdOVkhTTUVHREFXZ0JSU0d0QWoKcnd4Ync0Wm1WRGI2Ulk4T0FEaFBDekFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQTBHQ1NxR1NJYjNEUUVCQ3dVQQpBNElCQVFCbzJkc1JqYXhucndXdnBOY2V5Y05NdVdUTFI0MzFvUGYvbHQra2o3SHZJNTlXQ2ZhSmtnYW4zbkRBCjFKVm9iK29LQW9uZkVGUG81ZldMTi9YVHJhcXpza2xoeHJqZVBpZnJzNjh4ZEVXSlpqRCs1UU5qTnJqQXo1UG0KRTZyYVBtZ25EbkQ1eWhwa3kvUXpJTEVkeVpKa084YjRKLzdHWlRHa1pZUDBIeTdsZ2NnRlZQVG1GcDR0K0tuTApGVzFya3A0VWtLbUxmbzdSYlVVb2FwMnFiaXdRSzZhT2J3Vmc4Ny9SbmJvcTQyZWNpWE1qZDZZdW1EMkZVS1NnCmNlMmUxbEFuM0o4MVBjayttUENDajV6M3pxQ0tTMFU2TVRQSkxGRWxQanRwdlYvVXB3N2EwbFZHUXZPWjk4S1QKaWFNT3BFYXQrdUUydVl2Y2h3cGFub2NUQkdZYgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+  tls.key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRQzFyK1NXZytFNWNQZWQKUld6L0JFQ2Z3U3NYZCtiM0pwMVA3VHBhSmVVdkYyY045bFNGbzFnWkg0UVViUVJBZHdMYlVuYUNwWllOYjRLRgpjeXNRa1M4aE02MHo4YTVqY05uTmF3WkRGaDg0Vi9tTWF0WG5xeVFLc1N2QVZsMjNqKzVKWjZ6eFNtbEFTLzZ1CkhhNzF0cTh1WThvSHorOTRPaEd6YU9yak9OZHZ2TEVoOFpVWmMyd00rVEtnSG1adGFHYUVkOWN6aUhoallMS2IKSFlxMitxUGRrVndCYllJUGlJTzJhcW1mejJDREVycmRxTmVtcUI0VnZQWFAzczlySERuQ1QxSHlKcEorcUN1cgp3NjNhTGZWZEdVa0xSSWNzNC9tVW5wa1RLakJaU0JON1FJYnhFRVJYOXJ4OVRiSE1YSkY2L0xRU3RPOVVJVTkxCmxrRVJiUHMxQWdNQkFBRUNnZ0VCQUkwUW1HYlUxbFlIQS9vMElVQ1BTSzNCQ1hnYlBGVEF3bnVBTVVJMUVoRFMKRnMyY2FGdXFTNGlXRTdMWVFlamJmbmhUT25pTm9FZW1RS3pra3BjMlltVmcvaVhLakIvaFN2cFhFbkdjQjNsegp0T24xT1VlNmRTMW9DaFEzK21PL2VMKzlvMlZrNVB0ckJiNmloV2w2QWVIKzBLbm9KSUl3Yy9YY2pDTUh5eDJSCkQ5c0hRYlhCMDFYWENlek5jN21USDgraUtNWG5aU2l0ZkViVi8yVFREdTlrN0F0dmtkMnhoenFOVC9QU2RlbHUKUFFLOHVZMVVkQXlKTkJqeUt6WkFKSVgzcVRZdEZGaGpNbDB1YmVlbTZzejNOS2lHZmwySmt2NW1md1NhSnd2MQpnNUlLK3Q2VXBlWi9RaGp1TGJBc0tNSzM5Z0lNeWMybVphbHlRczlqa29FQ2dZRUE2a1hsUmRmTHk3emtYUEtnCi9GaDBLcjZETWN4N2x2bU1DZXl2OWpqbC8yUFJISDBPMVNwUEN5WHh3SWtYeVkrbzhIZE1mbVhDdEZ2QlVPMUYKTlQ3TENsQkZqYmZZUUxCdEo2bCs0anZJKzJUcXZXWFJLKytiUHFOaWM5N0xlR2NjaU91c0ZzSUZQOTRXa1BkRwpUc3NOQ2kxaXhwKzRnTnhUWWVmRTNVSStiNzBDZ1lFQXhvbUF5T2IxRkN0bk5FaEoxVmxJRUY4aGxOY0thUE1WCnA4RUlEL1hlSUpHNE9LeE1WZTZ2bUd1cGxBN3F2SlZwanBYM1EyaU5CVUx4Si92SXUzbi84emtsWnJPSzhPdVkKRTRYUkVOQzl0anRpOWZ2amFkNlptMVBMdVhHcGxSU0tGazQ1UlY4cGxXOWRjTENDZVN1UDY5bHJyYStCYnVEYQpDOUpTTkNCemxOa0NnWUVBeXNGVGZPOFhZbTFJOTJqR0M2QkNhZndZYjdFYUJjQlVnd0ptQ0NPV2EwSm9hTStUClZzb1hQdjdJREdxYU84Z3AzblJocjhOQ2ovWVppWURRdFJSemhhbVRpT1BrTlpoNzRDZkJ1T3NsTnU1UWV6cnoKbmFMeUtYUWVjVW9ScjFNT1R6SW83a2xkWWJsRXJwSlVOejFsTzdtc0UxdUl3MzNzYkgrNjBnUFRKY0VDZ1lCOQpXWitvT0xvUUMvOVRNVGo4clN3a3VndVh6OVhRd1htd3V0MStSandDMEQ1QitmY1FZbTBYalJJNld0aTJUSmVpCjRPaUc5T0hrcW9sY04wcGJwQUdIN1ZMQjd5WVFTbzl2OUJNMXpMV2E4dy9lUXpVb1NOVXZEczhYdkwzWFZHcUMKL3N5R0VqbE5FazBxc3ljTm5nVjJZWVhzMlZ5ZFJ2WWtkSnhXTVE4SXNRS0JnRmVsZWJSN08xNDROSk16VXNxYgpndStXMVQrcThobEZ6cDR3MkRZaVR1ZzhGSUMxR3RXQnJhaWZZTHlESWZSVzFaVVlrWmgweDBXaW15ZHRMZ1BUCnBCV1FrNTV1a1Y0TXBLVEdFV2VVT2F5ZjdQVDhPVXpWS0lXcE90NmJiRmJHdFNWdjMralZCK2xWMnFaMk94MUsKa01FL282TUdXdnBGbVk1WFJmaTVVZnp5Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K
+kind: Secret
+metadata:
+  name: example-com-tls-secret
+  namespace: default
+type: kubernetes.io/tls
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx
+  namespace: default
+spec:
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - backend:
+          serviceName: web-server
+          servicePort: 80
+        path: /test
+  tls:
+  - hosts:
+    - example.com
+    secretName: example-com-tls-secret
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-server
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/role: blue
+  ports:
+    - port: 80
+      targetPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-server-blue
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/role: blue
+  ports:
+    - port: 80
+      targetPort: 80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-server-1.18
+  labels:
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/version: 1.18.0
+    app.kubernetes.io/role: blue
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: nginx
+      app.kubernetes.io/version: 1.18.0
+      app.kubernetes.io/role: blue
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: nginx
+        app.kubernetes.io/version: 1.18.0
+        app.kubernetes.io/role: blue
+      name: test-nginx
+      namespace: default
+    spec:
+      containers:
+      - image: nginx:1.18.0-alpine
+        name: test-nginx
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html/test
+          name: test-volume
+        ports:
+        - containerPort: 80
+        imagePullPolicy: IfNotPresent
+      initContainers:
+      - image: alpine
+        name: initcontainer
+        command: ["/bin/sh", "-c", "--"]
+        args: ["echo This is test page for nginx v1.18.0! > /usr/share/nginx/html/test/index.html"]
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html/test
+          name: test-volume
+        imagePullPolicy: IfNotPresent
+      volumes:
+      - name: test-volume
+        emptyDir: {}
+
