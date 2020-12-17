@@ -14,7 +14,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-server
+  name: web-server-1.18
   labels:
     app.kubernetes.io/name: nginx
     app.kubernetes.io/version: 1.18.0
