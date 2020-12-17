@@ -32,7 +32,7 @@ spec:
       - image: alpine
         name: initcontainer
         command: ["/bin/sh", "-c", "--"]
-        args: ["echo This is test page! > /usr/share/nginx/html/test/index.html"]
+        args: ["echo This is test page nginx v1.19.6! > /usr/share/nginx/html/test/index.html"]
         volumeMounts:
         - mountPath: /usr/share/nginx/html/test
           name: test-volume
